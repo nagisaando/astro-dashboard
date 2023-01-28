@@ -4,14 +4,16 @@ import EmpyState from '../components/EmpyState.astro'
 import {Modal} from 'accessible-astro-components'
 const myName = 'Nagisa'
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs']
+const skillColor = 'navy'
+const messageColor = 'green'
 ---
 
 <DefaultLayout title="Users">
   <section>
     <h1>{myName}</h1><br />
     <p>Skill</p>
-    <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
-    {skills.includes('JavaScript') && <p>I know Javascript</p>}
+    <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}</ul>
+    {skills.includes('JavaScript') && <p class="message">I know Javascript</p>}
     <p class="size-20">Lorem ipsum dolor sit amet.</p>
   </section>
   <section class="margin-32">
@@ -25,3 +27,15 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs']
     </div>
   </section>
 </DefaultLayout>
+<style define:vars={{skillColor, messageColor}}>
+  h1 {
+    color: pink;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+  }
+  .message {
+    color: var(--messageColor);
+  }
+</style>
