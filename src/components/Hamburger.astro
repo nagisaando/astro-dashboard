@@ -1,0 +1,48 @@
+---
+const number = 1
+---
+
+<script>
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    console.log('clicked')
+    document.querySelector('.hamburger').classList.toggle('expanded')
+  })
+
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll('button')
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      alert('Button was clicked!')
+    })
+  })
+</script>
+
+<div class="hamburger">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+
+<button>hey {number}</button>
+
+<style>
+  /* nav styles */
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  .expanded {
+    background-color: pink;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
+  }
+</style>
